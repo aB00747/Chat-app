@@ -21,7 +21,9 @@
          1. Select your driver & Ver - set as default
          2. npm install mongodb - in  `Server` directory (root folder)
          3. Add your connection string *(mongodb+srv://ab00747...)* in [ Server -> `.env` ] file.
-6.  
+6. cd Server - to install other packages.
+7. npm i bcrypt jsonwebtoken validator  →  `bcrypt` is used for hashing passwords, `jwt` for generating JSON Web Tokens that can be
+   shorthand, `validator` to validate  data on client side.
 
 
 ### Need to Know

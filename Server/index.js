@@ -1,12 +1,14 @@
 const epxress = require("express");
 const cors = require("cors"); // allow to communicate with front-end
 const mongoose = require("mongoose"); // Database
+const UserRoute = require("./Route/UserRoute"); // export  user route
 
 const app = epxress();  // app to create application
 require("dotenv").config() // to use .env file
 
 app.use(epxress.json());  // middleware call this method from express
 app.use(cors());
+app.use("/api/users", UserRoute); // add the routes in our server
 
 // CRUD - create , read, update and delete
 
