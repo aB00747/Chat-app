@@ -16,7 +16,7 @@
    3. if warning of IP address follow from last step
    4. Build Database - free *shared* {go with the default} - create cluster
    5. click Get connection string  {_Application Development_} 
-      1. UserName & password {_to create database user_} => UN: ab00747 | PASS: Ak@1207$$
+      1. UserName & password {_to create database user_} => UN: ***** | PASS: *****
       2. Follow the steps {_Chose connection method_}
          1. Select your driver & Ver - set as default
          2. npm install mongodb - in  `Server` directory (root folder)
