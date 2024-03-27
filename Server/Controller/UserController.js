@@ -29,7 +29,7 @@ const registerUser = async (req, res) => {
         user = new User({ name, email, password });
 
         const salt = await bcrypt.genSalt(10); // encrypt the password.
-        user.password = await bcrypt.hash(password, salt);  // store hashed password in our database not original password 10 is a good number for security.
+        user.password = await bcrypt.hash(user.password, salt);  // store hashed password in our database not original password 10 is a good number for security.
         await user.save();
 
         const token = createToken(user.id);
@@ -44,4 +44,33 @@ const registerUser = async (req, res) => {
     }
 };
 
-module.exports = { registerUser };
+const loginUser = async (req, res) => {
+
+    try {
+        const { email, password } = req.body;
+        
+        let user = await User.findOne({ email });
+        
+        if (!user) return res.status(400).json("Invalid  Email or Password !!");
+
+        const isValidPassword = await bcrypt.compare(password, user.password);
+
+        if (!isValidPassword) return res.status(401).json("Invalid  Email or Password !!");
+
+        const token = createToken(user.id);
+
+        res.status(200).json({ _id: user.id, name: user.name, email, token })
+    } catch (error) {
+        res.status(500).json('Server Error');
+    }
+}
+
+
+const findUser = async(req, res) => {
+    const { email, name } = req.body;
+
+    let user = await User.findOne({ email })
+    return res.status(401).json(user.name);
+}
+
+module.exports = { registerUser, loginUser, findUser };
