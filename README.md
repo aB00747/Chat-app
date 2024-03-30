@@ -33,6 +33,7 @@
    5.  npm install - downlaod all required  dependencies.
    6.  npm run dev - check from package.json file. Will Run dev script. Create Local
    7.  npm i react-router-dom - to Route
+   8.  npm install react-bootstrap bootstrap - install bootstrap. (https://react-bootstrap.netlify.app/docs/getting-started/introduction)
 
 
 ### Need to Know
