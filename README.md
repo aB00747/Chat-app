@@ -24,6 +24,15 @@
 6. cd Server - to install other packages.
 7. npm i bcrypt jsonwebtoken validator  →  `bcrypt` is used for hashing passwords, `jwt` for generating JSON Web Tokens that can be
    shorthand, `validator` to validate  data on client side.
+8. cd Client (dir) 
+9. npm create vite@latest   →  [__Install Vite__] (https://vitejs.dev/guide/)
+   1.  Project name: >> .
+   2.  Package: >>  **empty**. (_press enter_)
+   3.  Select a framework: >> React
+   4.  Select varient: >> JavaScript
+   5.  npm install - downlaod all required  dependencies.
+   6.  npm run dev - check from package.json file. Will Run dev script. Create Local
+   7.  npm i react-router-dom - to Route
 
 
 ### Need to Know

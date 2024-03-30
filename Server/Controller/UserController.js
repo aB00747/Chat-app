@@ -48,9 +48,9 @@ const loginUser = async (req, res) => {
 
     try {
         const { email, password } = req.body;
-        
+
         let user = await User.findOne({ email });
-        
+
         if (!user) return res.status(400).json("Invalid  Email or Password !!");
 
         const isValidPassword = await bcrypt.compare(password, user.password);
@@ -66,11 +66,23 @@ const loginUser = async (req, res) => {
 }
 
 
-const findUser = async(req, res) => {
-    const { email, name } = req.body;
-
-    let user = await User.findOne({ email })
-    return res.status(401).json(user.name);
+const findUser = async (req, res) => {
+    const userID = req.params.userID;
+    try {
+        const user = await User.findById(userID);
+        res.status(200).send(user);
+    } catch (error) {
+        res.status(500).json("ERRRO =>" + error);
+    }
 }
 
-module.exports = { registerUser, loginUser, findUser };
+const getUsers = async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(500).json("ERRRO =>" + error);
+    }
+}
+
+module.exports = { registerUser, loginUser, findUser, getUsers };
