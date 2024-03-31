@@ -12,21 +12,17 @@ export const AuthContextProvider = ({ children }) => {
     email: "",
     password: "",
   });
-  console.log("REGINFO", registerInfo);
 
   const updateRegisterInfo = useCallback((info) => {
-    console.log("UpdateRegister", info);
     setRegisterInfo(info);
   }, []);
 
   const registerUser = useCallback(async (e) => {
-      console.log("In registerUser")
       e.preventDefault();
 
     setIsRegisterLoading(true);
     setRegisterError(null);
 
-    console.log("EERTERTE",registerInfo);
     const response = await postRequest(
       `${baseUrl}/users/register`,
       registerInfo
@@ -35,7 +31,6 @@ export const AuthContextProvider = ({ children }) => {
     setIsRegisterLoading(false);
 
     if (response.error) {
-        console.log("erro::", response);
       setRegisterError(response);
     }
 
