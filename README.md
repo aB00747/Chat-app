@@ -40,3 +40,7 @@
 
 node fileName.js  →   to excute the file in node
 to see the output in real time use : http://localhost:5000/
+
+`NOTE :`
+
+- ![alt text](image.png)  - context API - able to share the data globally
