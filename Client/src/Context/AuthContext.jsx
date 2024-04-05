@@ -1,4 +1,4 @@
-import { createContext, useCallback, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import { baseUrl, postRequest } from "../utils/Services";
 
 export const AuthContext = createContext();
@@ -12,6 +12,16 @@ export const AuthContextProvider = ({ children }) => {
     email: "",
     password: "",
   });
+
+  console.log("user",user);
+
+  useEffect(() => {
+
+    const user = localStorage.getItem("User") // get from localStorage
+    setUser(JSON.parse(user || null)); // set user
+
+  },[]);
+
 
   const updateRegisterInfo = useCallback((info) => {
     setRegisterInfo(info);
@@ -39,6 +49,11 @@ export const AuthContextProvider = ({ children }) => {
     setUser(response);
   }, [ registerInfo ]);
 
+  const logoutUser = useCallback(() => {
+    localStorage.removeItem("User"); // Remove local strogae data
+    setUser(null); // set User to null
+  },[]);
+
   return (
     <AuthContext.Provider
       value={{
@@ -47,7 +62,8 @@ export const AuthContextProvider = ({ children }) => {
         updateRegisterInfo,
         registerUser,
         registerError,
-        isRegisterLoading
+        isRegisterLoading,
+        logoutUser,
       }}
     >
       {children}
