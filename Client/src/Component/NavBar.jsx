@@ -7,7 +7,6 @@ const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
   return (
     <Navbar bg="dark" variant="dark" style={{ height: "3.75em" }}>
-      Nav
       <Container>
         <h2>
           <Link to="/" className="link-light text-decoration-none">
