@@ -2,6 +2,8 @@ const epxress = require("express");
 const cors = require("cors"); // allow to communicate with front-end
 const mongoose = require("mongoose"); // Database
 const UserRoute = require("./Route/UserRoute"); // export  user route
+const ChatRoute = require("./Route/ChatRoute"); // export  chat route
+const MessageRoute = require("./Route/MessageRoute"); // export  message route
 
 const app = epxress();  // app to create application
 require("dotenv").config() // to use .env file
@@ -9,6 +11,8 @@ require("dotenv").config() // to use .env file
 app.use(epxress.json());  // middleware call this method from express
 app.use(cors());
 app.use("/api/users", UserRoute); // add the routes in our server
+app.use("/api/chats", ChatRoute);
+app.use("/api/messages", MessageRoute);
 
 // CRUD - create , read, update and delete
 
