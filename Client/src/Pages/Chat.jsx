@@ -10,7 +10,8 @@ import {
   Container,
 } from "react-bootstrap";
 import { AuthContext } from "../Context/AuthContext";
-import UserChat  from "../Component/Chat/UserChat";
+import UserChat from "../Component/Chat/UserChat";
+import PotentialChats from "../Component/Chat/PotentialChats";
 
 const Chat = () => {
   const { user } = useContext(AuthContext);
@@ -19,6 +20,7 @@ const Chat = () => {
   return (
     <>
       <Container>
+        <PotentialChats />
         {userChats?.length < 1 ? (
           nul
         ) : (
