@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { ChatContext } from "../Context/ChatContext";
+import ChatBox from "../Component/Chat/ChatBox";
 import {
   Alert,
   Button,
@@ -15,7 +16,8 @@ import PotentialChats from "../Component/Chat/PotentialChats";
 
 const Chat = () => {
   const { user } = useContext(AuthContext);
-  const { userChats, isChatsLoading, userChatsError } = useContext(ChatContext);
+  const { userChats, isChatsLoading, userChatsError, updateCurrentChat } =
+    useContext(ChatContext);
   console.log("userCat", userChats);
   return (
     <>
@@ -30,13 +32,13 @@ const Chat = () => {
                 {isChatsLoading && <p>Loding chats...</p>}
                 {userChats?.map((chat, index) => {
                   return (
-                    <div key={index}>
+                    <div key={index} onClick={() => updateCurrentChat(chat)}>
                       {<UserChat chat={chat} user={user} />}
                     </div>
                   );
                 })}
               </Stack>
-              <p>CheckBox</p>
+                <ChatBox />
             </Stack>
           </Stack>
         )}

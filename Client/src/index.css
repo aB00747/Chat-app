@@ -78,6 +78,7 @@ body {
 
 /* Messages */
 .messages {
+  color: white;
   max-height: calc(100vh - 15rem);
   overflow-y: auto;
   padding: 0 2rem;
@@ -201,4 +202,10 @@ body {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
+}
+
+.no-selected-chat {
+  text-align: center;
+  width: 100%;
+  color: #ad9758; 
 }
