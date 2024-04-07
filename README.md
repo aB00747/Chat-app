@@ -34,6 +34,7 @@
    6.  npm run dev - check from package.json file. Will Run dev script. Create Local
    7.  npm i react-router-dom - to Route
    8.  npm install react-bootstrap bootstrap - install bootstrap. (https://react-bootstrap.netlify.app/docs/getting-started/introduction)
+   9.  Find good one and Downlaod it (**SVG**) - unDraw (Avater) - (https://undraw.co/)
 
 
 ### Need to Know
