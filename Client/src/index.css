@@ -33,6 +33,7 @@ body {
 }
 
 .user-card .name {
+  color: white;
   font-weight: 700;
 }
 
