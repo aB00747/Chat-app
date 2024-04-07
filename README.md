@@ -35,6 +35,7 @@
    7.  npm i react-router-dom - to Route
    8.  npm install react-bootstrap bootstrap - install bootstrap. (https://react-bootstrap.netlify.app/docs/getting-started/introduction)
    9.  Find good one and Downlaod it (**SVG**) - unDraw (Avater) - (https://undraw.co/)
+   10. cd /Client -> npm i moment - Time using  library.
 
 
 ### Need to Know
