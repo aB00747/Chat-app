@@ -1,5 +1,5 @@
 ## Create Folder
-- Client - fornt end folder
+- Client - front end folder
 - Socket - socket .io server side code 
 - Server - sever  side code
 
