@@ -1,5 +1,5 @@
 ## Create Folder
-- Client - front end folder
+- Client - fornt end folder
 - Socket - socket .io server side code 
 - Server - sever  side code
 
@@ -37,6 +37,15 @@
    9.  Find good one and Downlaod it (**SVG**) - unDraw (Avater) - (https://undraw.co/)
    10. cd /Client -> npm i moment - Time using  library.
    11. cd /Client -> npm i react-input-emoji
+10. Socket.io  installation   →    (https://socket.io/docs/v4/)
+    1. cd ../Socket
+    2. npm init --yes
+    3. add "socket.io" in dependency section of `package.json`.
+    4. npm install socket.io
+    5. Include CDN link of socket.io in public/index.html file.
+    6. cd /Client
+    7. npm install socket.io-client -> installation socket.io at client
+    8. Emit cheatsheet -> (https://socket.io/docs/v4/emit-cheatsheet/)
 
 
 ### Need to Know
@@ -47,3 +56,4 @@ to see the output in real time use : http://localhost:5000/
 `NOTE :`
 
 - ![alt text](image.png)  - context API - able to share the data globally
+- Check the difference between REST APIs vs. WEB SOCKETS APIs.  →  (https://www.geeksforgeeks.org/difference-between-rest-api-and-web-socket-api/)
