@@ -16,9 +16,7 @@ import PotentialChats from "../Component/Chat/PotentialChats";
 
 const Chat = () => {
   const { user } = useContext(AuthContext);
-  const { userChats, isChatsLoading, userChatsError, updateCurrentChat } =
-    useContext(ChatContext);
-  console.log("userCat", userChats);
+  const { userChats, isChatsLoading, userChatsError, updateCurrentChat } = useContext(ChatContext);
   return (
     <>
       <Container>
@@ -38,7 +36,7 @@ const Chat = () => {
                   );
                 })}
               </Stack>
-                <ChatBox />
+              <ChatBox />
             </Stack>
           </Stack>
         )}

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import moment from "moment";
 import { AuthContext } from "../../Context/AuthContext";
 import { ChatContext } from "../../Context/ChatContext";
@@ -17,14 +17,18 @@ const ChatBox = () => {
   } = useContext(ChatContext);
   const { recipientUser } = useFetchRecipientUser(currentChat, user);
   const [textMessage, setTextMessage] = useState("");
-  console.log("textMessage", textMessage);
+  const scroll = useRef();
+
+  useEffect(() => {
+    console.log("asdmlaks");
+    scroll.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   if (!recipientUser)
     return <p className="no-selected-chat">No Conversation Selected Yet....</p>;
 
   if (ismessagesLoading)
     return <p className="no-selected-chat">Loading chats...</p>;
-  console.log("NNNNNNNNNNN", messages);
 
   return (
     <Stack gap={4} className="chat-box">
@@ -42,6 +46,7 @@ const ChatBox = () => {
                     ? "message self align-self-end flex-grow-0"
                     : "message align-self-start flex-grow-0"
                 }`}
+                ref={scroll}
               >
                 <span>{message.text}</span>
                 <span className="message-footer">
@@ -70,7 +75,7 @@ const ChatBox = () => {
             width="16"
             height="16"
             fill="currentColor"
-            class="bi bi-send"
+            className="bi bi-send"
             viewBox="0 0 16 16"
           >
             <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />

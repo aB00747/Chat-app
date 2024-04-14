@@ -65,8 +65,8 @@ body {
   border-radius: 50%;
   background: rgb(0, 219, 0);
   position: absolute;
-  top: -3px;
-  right: -3px;
+  top: 1px;
+  right: 0px;
   z-index: 2;
 }
 
@@ -182,6 +182,10 @@ body {
   padding: 0.5rem 1rem;
 }
 
+.notification-icon {
+  cursor: pointer;
+}
+
 .notification.not-read {
   background: #263159;
 }
@@ -190,6 +194,13 @@ body {
   margin-top: 0.2rem;
   font-size: 12px;
   color: #e0e0e0;
+}
+
+.notification-text {
+  margin-top: 0.2rem;
+  font-size: 12px;
+  color: #8b8b8b;
+  font-style: italic;
 }
 
 .notification-count {
